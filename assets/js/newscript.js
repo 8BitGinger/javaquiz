@@ -182,7 +182,7 @@ nextButton.addEventListener("click", ()=>{
 
 function showScore() {
     resetState();
-    questionEl.innerHTML = "You Scored:";
+    questionEl.innerHTML = "Final Score:";
     scoreEl.innerHTML = score -1 + "   out of   " + questionLength;
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = "block";

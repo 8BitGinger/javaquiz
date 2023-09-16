@@ -70,7 +70,7 @@ div a {
     flex-direction: row;
     justify-content: center;
     align-items: center;
- 
+
 }
 
 
@@ -178,6 +178,11 @@ div a {
     text-shadow: rgb(255, 0, 0) 0 10 30px;
 
 }
+.btn1:hover {
+    scale: 1.1;
+    box-shadow: 0 0 10px 1px #07e3ef;
+
+}
 
 #answer-buttons {
     display: flex;
@@ -202,14 +207,15 @@ div a {
 }
 
 .tagAlong {
-    color:rgb(255, 0, 0);
+    color:rgb(0, 225, 255);
    font-weight: 800;
     padding: 1px;
     font-size: xx-large;
     border-radius: 100%;
-    text-shadow: rgb(0, 0, 0) 0 0 15px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgb(255, 255, 255);
+    text-shadow: rgb(13, 148, 226) 0 0 15px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(7, 7, 7);
+    margin-left: 10px;
 }
 
 .correct {
