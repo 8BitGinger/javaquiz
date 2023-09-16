@@ -113,11 +113,24 @@ var nextButton = document.getElementById("next-btn");
 var questionLength = questions.length - 1;
 var resultEl = document.getElementById("result");
 var startOver = document.getElementById("btn1");
+var timeLeft = 30;
+
 
 let currentQuestionIndex = 0;
 let score = 0;
 
+function countdown() {
 
+    var timerEl = document.getElementById('Timer');
+    var timerId = setInterval(countdown, 1000);
+    if (timeLeft == 0) {
+      clearTimeout(timerId);
+      showScore();
+    } else {
+      timerEl.innerHTML = "🕑 " + timeLeft + ' seconds left';
+      timeLeft--;
+    }
+  }
 
 
 function startQuiz() {
@@ -130,7 +143,6 @@ function startQuiz() {
 
 function showQuestion() {
     resetState();
-    startTimer();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex;
     questionEl.innerHTML = questionNo + ". " + currentQuestion.question;
@@ -181,6 +193,7 @@ function selectAnswer(e) {
 nextButton.addEventListener("click", ()=>{
     if(currentQuestionIndex < questions.length){
         handleNextButton();
+        countdown();
     }else{
         startQuiz();
     }
@@ -214,3 +227,4 @@ function resetResult() {
 }
 
 startQuiz();
+

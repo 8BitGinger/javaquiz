@@ -79,7 +79,7 @@ div a {
 .timer {
 
     border-radius: 25px;
-    position: absolute; `
+    position: absolute; 
     top:9px; 
     right:10px;
     color: white;
@@ -160,7 +160,7 @@ div a {
 .btn1 {
     width: fit-content;
     border-radius: 100%;
-
+    scale: 1.5;
     color: #e70c0c; 
     font-weight: 800;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
