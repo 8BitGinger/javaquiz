@@ -1,5 +1,13 @@
 var questions = [
     {
+        question: ".0 Look to answer the following code-related questions within the time limit.  Keep in mind that incorrect answers will penalize your score-time by ten seconds!",
+        answers: [
+            {text: "Start Quiz", correct: true},
+
+        ]
+    },
+
+    {
         question: "Inside which Element do you put JavaScript?",
         answers: [
             {text: "< var >", correct: false},
@@ -39,7 +47,7 @@ var questions = [
     },
 
     {
-        question: "Which JavaScript lable catches all the values, excep for the ones specified?",
+        question: "Which JavaScript label catches all the values, excep for the ones specified?",
         answers: [
             {text: "catch", correct: false},
             {text: "default", correct: true},
@@ -102,9 +110,13 @@ var scoreEl = document.getElementById("score");
 var questionEl = document.getElementById("question");
 var answerButtons = document.getElementById("answer-buttons");
 var nextButton = document.getElementById("next-btn");
+var questionLength = questions.length - 1;
 
 let currentQuestionIndex = 0;
 let score = 0;
+
+
+
 
 function startQuiz() {
     currentQuestionIndex = 0;
@@ -117,7 +129,7 @@ function startQuiz() {
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
+    let questionNo = currentQuestionIndex;
     questionEl.innerHTML = questionNo + ". " + currentQuestion.question;
     scoreEl.innerHTML = " ";
     nextButton.style.display = "none";
@@ -171,7 +183,7 @@ nextButton.addEventListener("click", ()=>{
 function showScore() {
     resetState();
     questionEl.innerHTML = "You Scored:";
-    scoreEl.innerHTML = score + "   out of   " + questions.length;
+    scoreEl.innerHTML = score -1 + "   out of   " + questionLength;
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = "block";
 }
@@ -185,4 +197,4 @@ function handleNextButton() {
     }
 }
 
-startQuiz ();
+startQuiz();
