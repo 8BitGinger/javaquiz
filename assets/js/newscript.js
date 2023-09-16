@@ -99,7 +99,7 @@ var questions = [
         ]
     },
 ];
-
+var scoreEl = document.getElementById("score");
 var questionEl = document.getElementById("question");
 var answerButtons = document.getElementById("answer-buttons");
 var nextButton = document.getElementById("next-btn");
@@ -111,6 +111,7 @@ function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
+    nextButton.style.display = "none";
     showQuestion();
 }
 
@@ -119,6 +120,9 @@ function showQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionEl.innerHTML = questionNo + ". " + currentQuestion.question;
+    scoreEl.innerHTML = "Correct Answers:   " + score;
+    nextButton.style.display = "none";
+
 
     currentQuestion.answers.forEach(answer => {
         var button = document.createElement("button");
@@ -139,15 +143,47 @@ function resetState() {
     }
 }
 
-function selectAnswer() {
-    var selectedBTN = e.target;
-    var isCorrect = selectedBGN.dataset.correct === "true";
+function selectAnswer(e) {
+    var selectedBtn = e.target;
+    var isCorrect = selectedBtn.dataset.correct === "true";
     if(isCorrect){
         selectedBtn.classList.add("correct");
+        score += 1;
     }else{
         selectedBtn.classList.add("incorrect");
     }
+    Array.from(answerButtons.children).forEach(button => {
+        if(button.dataset.correct === "true"){
+            button.classList.add("correct");
+        }
+        button.disabled=true;
+    });
+    nextButton.style.display = "block";
 }
 
+nextButton.addEventListener("click", ()=>{
+    if(currentQuestionIndex < questions.length){
+        handleNextButton();
+    }else{
+        startQuiz();
+    }
+})
+
+function showScore() {
+    resetState();
+    questionEl.innerHTML = "You Scored:";
+    scoreEl.innerHTML = score + "   out of   " + questions.length;
+    nextButton.innerHTML = "Play Again";
+    nextButton.style.display = "block";
+}
+
+function handleNextButton() {
+    currentQuestionIndex++;
+    if(currentQuestionIndex < questions.length){
+        showQuestion();
+    }else{
+        showScore();
+    }
+}
 
 startQuiz ();
