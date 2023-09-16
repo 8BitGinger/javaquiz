@@ -3,12 +3,12 @@
     padding:0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+
 }
 
 body {
     background-image: url(/assets/—Pngtree—flat\ dark\ programming\ code\ scrambling_990720.png);
     background-size: cover;
-
 }
 
 .app {
@@ -17,35 +17,49 @@ body {
     width: 90%;
     max-width: 600px;
     margin: 100px auto 0;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 30px;
-    border: 10px solid rgb(5, 5, 5);
-   
+    border: 8px solid #07d5d5;
+    box-shadow: 0 0 10px 1px #07ef26;
+    
 }
 
 
 .app h1 {
     font-size: 35px;
-    color: #07d5d5;
+    color: #07d5d5;;
     
     font-style: italic;
     font-weight:bold;
-    border-bottom: 1px solid #07d5d5;
+    border-bottom: 1px solid #ffffff;
     padding-bottom: 30px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .quiz {
-    padding: 20px 0;
+    padding: 15px 0;
+    margin: 10px;
+    margin-top: 30px;
+    background-color: #222;
+    border-radius: 10px;
+    border: 2px solid rgb(42, 240, 121);;
 }
 
 .quiz h2 {
     font-size: 25px;
     color: rgb(42, 240, 121);
-    background-color: #222;
+    
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-weight:500;
         padding: 5px;
+}
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .timer {
@@ -61,6 +75,7 @@ body {
     position: absolute;
     top:0px;
     left:0px;
+    margin-bottom: ;
 }
 
 .highScore a {
@@ -69,25 +84,34 @@ body {
 }
 
 .glow {
-    color: white;
-    text-shadow: rgb(3, 255, 133) 0 0 15px;
+    
+    -webkit-text-stroke-width: .25px;
+    -webkit-text-stroke-color: rgb(29, 252, 13);
+    text-shadow: rgb(0, 237, 245) 0 0 15px;
 }
 
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .btn {
     background: #222;
     color: #07ef26;
     font-weight: 500;
     font-family:'Courier New', Courier, monospace;
-    width: 100%;
+    width: 45%;
     border: 1px solid #222;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px 3px;
     text-align: center;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s;
     justify-content: center;
+    border: 2px dotted rgb(42, 240, 121);
+
 }
 
 .btn:disabled {
@@ -100,6 +124,35 @@ body {
     scale: 1.1;
     
 
+}
+
+.btn1 {
+    width: fit-content;
+    border-radius: 100%;
+    background-image: url(/assets/—Pngtree—vector\ reload\ icon_4017523.png);
+    background-size: cover;
+    background-position: center;
+    color: #e70c0c; 
+    font-weight: 800;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 20px;
+    margin: 20px;
+    margin-right: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    justify-content: center;
+    text-decoration: none;
+    font-size: x-large;
+    text-shadow: rgb(255, 0, 0) 0 10 30px;
+
+}
+
+#answer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #next-btn {
@@ -116,6 +169,17 @@ body {
     display:none;
     font-size:medium;
     box-shadow: 0 0 10px 1px #07ef26;
+}
+
+.tagAlong {
+    color:rgb(255, 0, 0);
+   font-weight: 800;
+    padding: 1px;
+    font-size: large;
+    border-radius: 100%;
+    text-shadow: rgb(0, 0, 0) 0 0 15px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
 }
 
 .correct {
