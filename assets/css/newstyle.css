@@ -23,14 +23,15 @@ div a {
 }
 
 .app {
-    background-image: url(/assets/—Pngtree—low\ poly\ brain\ with\ binary_3551586.jpg);
+    background-image: url(/assets/—Pngtree—web\ video\ game\ background_1394789.png);
     background-size: cover;
+    background-position: center;
     width: 70%;
     
     margin: 100px auto 0;
     border-radius: 15px;
     padding: 30px;
-    border: 5px solid #07d5d5;
+    border: 5px solid #0ed507;
     box-shadow: 0 0 10px 1px #07ef26;
     margin-top: 150px;
 }
@@ -38,7 +39,7 @@ div a {
 
 .app h1 {
     font-size: 35px;
-    color: #07d5d5;;
+    color: #18d507;;
     font-style: italic;
     font-weight:bold;
     border-bottom: 1px solid #ffffff;
@@ -78,7 +79,7 @@ div a {
 .timer {
 
     border-radius: 25px;
-    position: absolute; 
+    position: absolute; `
     top:9px; 
     right:10px;
     color: white;
@@ -114,9 +115,9 @@ div a {
 
 .glow {
     
-    -webkit-text-stroke-width: .25px;
-    -webkit-text-stroke-color: rgb(29, 252, 13);
-    text-shadow: rgb(0, 237, 245) 0 0 15px;
+    -webkit-text-stroke-width: .3px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 49, 245) 0 0 15px;
 }
 
 .home {
@@ -149,7 +150,7 @@ div a {
 }
 
 .btn:hover:not([disabled]) {
-    background: #0cc224;
+    background: #0ecdd7;
     color: black;
     scale: 1.1;
     
@@ -159,29 +160,29 @@ div a {
 .btn1 {
     width: fit-content;
     border-radius: 100%;
-    background-image: url(/assets/—Pngtree—vector\ reload\ icon_4017523.png);
-    background-size: cover;
-    background-position: center;
+
     color: #e70c0c; 
     font-weight: 800;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    border: 2px solid rgb(255, 255, 255);
-    padding: 30px;
-    margin: 20px;
-    margin-right: 5px;
+    margin: 10px;
+    margin-top: 30px;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s;
     justify-content: center;
     text-decoration: none;
-    font-size: x-large;
+    font-size: xx-large;
     text-shadow: rgb(255, 0, 0) 0 10 30px;
 
 }
 .btn1:hover {
-    scale: 1.1;
-    box-shadow: 0 0 10px 1px #07e3ef;
-
+    scale: 1.5;
+    box-shadow: 0 0 10px 5px #22a707;
+    background-image: url(/assets/—Pngtree—vector\ reload\ icon_4017523.png);
+    background-size: cover;
+    font-size: 1px;
+    padding: 20px;
+    border: 2px double red;
 }
 
 #answer-buttons {
@@ -209,18 +210,23 @@ div a {
 .tagAlong {
     color:rgb(0, 225, 255);
    font-weight: 800;
+   align-items: center;
     padding: 1px;
-    font-size: xx-large;
+    font-size: 40px;
     border-radius: 100%;
     text-shadow: rgb(13, 148, 226) 0 0 15px;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: rgb(7, 7, 7);
-    margin-left: 10px;
+
+    margin-top: 30px;
+    font-family:fantasy;
+    
 }
 
 .correct {
     background: #07ef26;
     color: black;
+    scale: 1.05;
 }
 
 .incorrect {
@@ -230,4 +236,17 @@ div a {
 
 #score {
     text-align: center;
+}
+
+.result h2 {
+    color: rgb(0, 0, 0);
+    font-size: xx-large;
+    margin-left: 30px;
+    background-color: #ecff44;
+    border-radius: 10px;
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }

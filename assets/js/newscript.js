@@ -1,6 +1,6 @@
 var questions = [
     {
-        question: ".0 <br> ------<br>Hello! I'm Jumpy the Java Frog! <br>  <br>Help me answer the following code-related questions within the time limit.  Keep in mind that incorrect answers will penalize our score-time by 10 seconds! <br><br> After you select an answer the next button will appear and your timer will begin.  <br> Try it out by clicking: 'Start Quiz'",
+        question: ".0 <br> ------<br>Hello! I'm Jumpy the Java Frog! <br>  <br>Help me answer the following code-related questions within the time limit.  Keep in mind that incorrect answers will penalize our score-time by 10 seconds so hop along carefully! <br><br> After you select an answer the next button will appear and your timer will begin.  <br> Try it out by clicking: 'Start Quiz'",
         answers: [
             {text: "Start Quiz", correct: true},
 
@@ -111,6 +111,8 @@ var questionEl = document.getElementById("question");
 var answerButtons = document.getElementById("answer-buttons");
 var nextButton = document.getElementById("next-btn");
 var questionLength = questions.length - 1;
+var resultEl = document.getElementById("result");
+var startOver = document.getElementById("btn1");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -128,6 +130,7 @@ function startQuiz() {
 
 function showQuestion() {
     resetState();
+    startTimer();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex;
     questionEl.innerHTML = questionNo + ". " + currentQuestion.question;
@@ -157,11 +160,14 @@ function resetState() {
 function selectAnswer(e) {
     var selectedBtn = e.target;
     var isCorrect = selectedBtn.dataset.correct === "true";
+
     if(isCorrect){
         selectedBtn.classList.add("correct");
         score += 1;
+        resultEl.innerHTML = "🐸Correct!";
     }else{
         selectedBtn.classList.add("incorrect");
+        resultEl.innerHTML = "Incorrect!🐸"
     }
     Array.from(answerButtons.children).forEach(button => {
         if(button.dataset.correct === "true"){
@@ -180,21 +186,31 @@ nextButton.addEventListener("click", ()=>{
     }
 })
 
+function startTimer() {
+
+}
+
 function showScore() {
     resetState();
     questionEl.innerHTML = "Final Score:";
     scoreEl.innerHTML = score -1 + "   out of   " + questionLength;
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = "block";
+    
 }
 
 function handleNextButton() {
+    resetResult();
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
         showQuestion();
     }else{
         showScore();
     }
+}
+
+function resetResult() {
+    document.getElementById("result").innerHTML = " ";
 }
 
 startQuiz();
