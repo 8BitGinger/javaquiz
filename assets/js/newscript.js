@@ -1,101 +1,100 @@
 var questions = [
     {
-        question: "What is Question 1",
+        question: "Inside which Element do you put JavaScript?",
         answers: [
-            {text: "wrong answer", correct: false},
-            {text: "wrong answer", correct: false},
-            {text: "right answer", correct: true},
-            {text: "wrong answer", correct: false},
+            {text: "< var >", correct: false},
+            {text: "< section >", correct: false},
+            {text: "< script >", correct: true},
+            {text: "< code >", correct: false},
         ]
     },
 
     {
-        question: "What is Question 2",
+        question: "If you type the following code in the console window, what result will you get? 3 > 2 > 1 === false",
         answers: [
-            {text: "wrong answer", correct: false},
-            {text: "wrong answer", correct: false},
-            {text: "right answer", correct: true},
-            {text: "wrong answer", correct: false},
+            {text: "false", correct: false},
+            {text: "true", correct: true},
+
         ]
     },
 
     {
-        question: "What is Question 3",
+        question: "JavaScript is a _____-side Scripting Language",
         answers: [
-            {text: "wrong answer", correct: false},
-            {text: "wrong answer", correct: false},
-            {text: "right answer", correct: true},
-            {text: "wrong answer", correct: false},
+            {text: "Client", correct: false},
+            {text: "Server", correct: false},
+            {text: "Both", correct: true},
+            {text: "None", correct: false},
         ]
     },
 
     {
-        question: "What is Question 4",
+        question: "Which of the following will write the message 'Hello DataFlair!' in an alert box?",
         answers: [
-            {text: "wrong answer", correct: false},
-            {text: "wrong answer", correct: false},
-            {text: "right answer", correct: true},
-            {text: "wrong answer", correct: false},
+            {text: "alert('Hello DataFlair!')", correct: true},
+            {text: "alertBox('Hello DataFlair!')", correct: false},
+            {text: "alert(Hello DataFlair!)", correct: false},
+            {text: "msgAlert('Hello DataFlair!')", correct: false},
         ]
     },
 
     {
-        question: "What is Question 5",
+        question: "Which JavaScript lable catches all the values, excep for the ones specified?",
         answers: [
-            {text: "wrong answer", correct: false},
-            {text: "wrong answer", correct: false},
-            {text: "right answer", correct: true},
-            {text: "wrong answer", correct: false},
+            {text: "catch", correct: false},
+            {text: "default", correct: true},
+            {text: "label", correct: false},
+            {text: "try", correct: false},
         ]
     },
 
     {
-        question: "What is Question 6",
+        question: "Which are the correct 'if' statemetns to execute certain code if 'x' is equal to 2?",
         answers: [
-            {text: "wrong answer", correct: false},
-            {text: "wrong answer", correct: false},
-            {text: "right answer", correct: true},
-            {text: "wrong answer", correct: false},
+            {text: "if(x 2)", correct: false},
+            {text: "if(x=2)", correct: false},
+            {text: "if(x == 2)", correct: true},
+            {text: "if(x != 2)", correct: false},
         ]
     },
 
     {
-        question: "What is Question 7",
+        question: "What will the code return?: Boolean(3 < 7)",
         answers: [
-            {text: "wrong answer", correct: false},
-            {text: "wrong answer", correct: false},
-            {text: "right answer", correct: true},
-            {text: "wrong answer", correct: false},
+            {text: "true", correct: true},
+            {text: "false", correct: false},
+            {text: "NaN", correct: false},
+            {text: "SyntaxError", correct: false},
         ]
     },
 
     {
-        question: "What is Question 8",
+        question: "A JavaScript File has an Extension of",
         answers: [
-            {text: "wrong answer", correct: false},
-            {text: "wrong answer", correct: false},
-            {text: "right answer", correct: true},
-            {text: "wrong answer", correct: false},
+            {text: ".Java", correct: false},
+            {text: ".Js", correct: true},
+            {text: ".javascript", correct: false},
+            {text: ".xml", correct: false},
         ]
     },
 
     {
-        question: "What is Question 9",
+        question: "Which Function is Used To Parse a String To Int?",
         answers: [
-            {text: "wrong answer", correct: false},
-            {text: "wrong answer", correct: false},
-            {text: "right answer", correct: true},
-            {text: "wrong answer", correct: false},
+            {text: "Integer.Parse", correct: false},
+            {text: "Int.Parse.String", correct: false},
+            {text: "Parse.Int", correct: false},
+            {text: "Int.Parse", correct: true},
         ]
     },
 
     {
-        question: "What is Question 10",
+        question: "Which Of The Dialog Box Display a Message And a Data Entry Field?",
         answers: [
-            {text: "wrong answer", correct: false},
-            {text: "wrong answer", correct: false},
-            {text: "right answer", correct: true},
-            {text: "wrong answer", correct: false},
+            {text: "Alert()", correct: false},
+            {text: "Confirm()", correct: false},
+            {text: "Prompt()", correct: true},
+            {text: "Msg()", correct: false},
         ]
     },
 ];
@@ -120,7 +119,7 @@ function showQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionEl.innerHTML = questionNo + ". " + currentQuestion.question;
-    scoreEl.innerHTML = "Correct Answers:   " + score;
+    scoreEl.innerHTML = " ";
     nextButton.style.display = "none";
 
 
