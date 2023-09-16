@@ -1,6 +1,6 @@
 var questions = [
     {
-        question: ".0 Look to answer the following code-related questions within the time limit.  Keep in mind that incorrect answers will penalize your score-time by ten seconds!",
+        question: ".0 <br> ------<br>Hello! I'm Jumpy the Java Frog! <br>  <br>Help me answer the following code-related questions within the time limit.  Keep in mind that incorrect answers will penalize our score-time by 10 seconds! <br><br> After you select an answer the next button will appear and your timer will begin.  <br> Try it out by clicking: 'Start Quiz'",
         answers: [
             {text: "Start Quiz", correct: true},
 

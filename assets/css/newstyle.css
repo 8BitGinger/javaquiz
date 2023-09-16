@@ -6,29 +6,39 @@
 
 }
 
+
 body {
     background-image: url(/assets/—Pngtree—flat\ dark\ programming\ code\ scrambling_990720.png);
     background-size: cover;
 }
 
+section {
+    background-color:#07d5d5;
+}
+
+
+div a {
+    font-family:fantasy;
+
+}
+
 .app {
     background-image: url(/assets/—Pngtree—low\ poly\ brain\ with\ binary_3551586.jpg);
     background-size: cover;
-    width: 90%;
-    max-width: 600px;
+    width: 70%;
+    
     margin: 100px auto 0;
     border-radius: 15px;
     padding: 30px;
-    border: 8px solid #07d5d5;
+    border: 5px solid #07d5d5;
     box-shadow: 0 0 10px 1px #07ef26;
-    
+    margin-top: 150px;
 }
 
 
 .app h1 {
     font-size: 35px;
     color: #07d5d5;;
-    
     font-style: italic;
     font-weight:bold;
     border-bottom: 1px solid #ffffff;
@@ -46,7 +56,7 @@ body {
 
 .quiz h2 {
     font-size: 25px;
-    color: rgb(42, 240, 121);
+    color: #07d5d5;
     
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -60,27 +70,46 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+ 
 }
 
+
+
 .timer {
+
+    border-radius: 25px;
     position: absolute; 
-    top:0px; 
-    right:0px;
+    top:9px; 
+    right:10px;
     color: white;
+    font-size: 35px;
+    padding: 21px;
+    padding-top: 19px;
     /*display: none; reomve this comment after finished*/
 }
 
 .highScore {
+
+    border-radius: 25px;
     color: white;
     position: absolute;
     top:0px;
-    left:0px;
-    margin-bottom: ;
+    left:10px;
+    margin: 5px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    margin-top: 10px;
+    padding-top: -5px;
+    font-size: 35px;
 }
 
 .highScore a {
     text-decoration: none;
     color: white;
+}
+
+.makeBig {
+    font-size: 55px;
 }
 
 .glow {
@@ -99,6 +128,7 @@ body {
 .btn {
     background: #222;
     color: #07ef26;
+    font-size: larger;
     font-weight: 500;
     font-family:'Courier New', Courier, monospace;
     width: 45%;
@@ -119,7 +149,7 @@ body {
 }
 
 .btn:hover:not([disabled]) {
-    background: #07ef26;
+    background: #0cc224;
     color: black;
     scale: 1.1;
     
@@ -136,7 +166,7 @@ body {
     font-weight: 800;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     border: 2px solid rgb(255, 255, 255);
-    padding: 20px;
+    padding: 30px;
     margin: 20px;
     margin-right: 5px;
     text-align: center;
@@ -167,7 +197,7 @@ body {
     border-radius: 10px;
     cursor: pointer;
     display:none;
-    font-size:medium;
+    font-size:x-large;
     box-shadow: 0 0 10px 1px #07ef26;
 }
 
@@ -175,7 +205,7 @@ body {
     color:rgb(255, 0, 0);
    font-weight: 800;
     padding: 1px;
-    font-size: large;
+    font-size: xx-large;
     border-radius: 100%;
     text-shadow: rgb(0, 0, 0) 0 0 15px;
     -webkit-text-stroke-width: 1px;
@@ -183,12 +213,12 @@ body {
 }
 
 .correct {
-    background: #9aeabc;
+    background: #07ef26;
     color: black;
 }
 
 .incorrect {
-    background:rgb(240, 146, 146);
+    background:rgb(248, 12, 12);
     color: white;
 }
 
