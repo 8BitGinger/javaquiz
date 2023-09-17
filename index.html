@@ -1,32 +1,31 @@
-
-<!DOCTYPE html>
-<html lang="en">
- 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/style.css">
- 
-</head>
- 
-<body>
-
-    <div class="higscores">
-        <a href="/highscores.html"> View High Scores </a>
-    </div>
-    <div class="Time">
-        <a
-    </div>
-    <div class="container">
-        <h1>Quiz Application Using JavaScript</h1>
-        <div class="question" id="ques"></div>
-        <div class="options" id="opt"></div>
-        <button onclick="checkAns()" id="btn">SUBMIT</button>
-        <div id="score"></div>
-        <script src="/assets/js/script.js"></script>
-    </div>
- 
-</body>
- 
-</html>
+<DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Quiz - Landing Page</title>
+        <link rel="stylesheet" href="./assets/css/newstyle.css">
+    </head>
+    <body>
+        <section class="header">
+            <div class="timer">
+                <a id=Timer></a>
+            </div>
+            <div class="highScore">
+                <a id="highScoreText" href="/highscore.html">View High Scores!</a>
+            </div>
+        </section>
+    
+        <div class="app">
+            <h1 class="glow">Coding Quiz Challenge</h1>
+                <div class="quiz">
+                    <h2 id="question">Hello! 🐸 I'm Jumpy the Java Frog! <br>  <br>Help me answer the following code-related questions within the time limit.  Keep in mind that incorrect answers will penalize our score-time by 10 seconds so hop along carefully! <br><br> After you select an answer the next button will appear and your timer will begin.  <br> When you're ready click: "Start Quiz" </h2>
+                        <h2 id="score"> </h2>
+                </div>
+                <div class="floatcenter">
+                    <a href="/quiz.html" id="startBtn">Start Quiz</a>
+                </div>
+        
+        
+    </body>
+    </html>

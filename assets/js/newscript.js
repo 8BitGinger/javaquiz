@@ -1,11 +1,5 @@
 var questions = [
-    {
-        question: ".0 <br> ------<br>Hello! I'm Jumpy the Java Frog! <br>  <br>Help me answer the following code-related questions within the time limit.  Keep in mind that incorrect answers will penalize our score-time by 10 seconds so hop along carefully! <br><br> After you select an answer the next button will appear and your timer will begin.  <br> Try it out by clicking: 'Start Quiz'",
-        answers: [
-            {text: "Start Quiz", correct: true},
-
-        ]
-    },
+ 
 
     {
         question: "Inside which Element do you put JavaScript?",
@@ -110,21 +104,27 @@ var scoreEl = document.getElementById("score");
 var questionEl = document.getElementById("question");
 var answerButtons = document.getElementById("answer-buttons");
 var nextButton = document.getElementById("next-btn");
-var questionLength = questions.length - 1;
+var saveButton = document.getElementById("saveScore");
+var questionLength = questions.length;
 var resultEl = document.getElementById("result");
 var startOver = document.getElementById("btn1");
-var timeLeft = 30;
-
+var timeLeft = 75;
+var timerEl = document.getElementById('Timer');
+var timerId = setInterval(countdown, 1000);
+var nameEl = document.getElementById("name");
+var submitScoreEl = ("#submit");
+var highscore = 0;
 
 let currentQuestionIndex = 0;
 let score = 0;
 
+
 function countdown() {
 
-    var timerEl = document.getElementById('Timer');
-    var timerId = setInterval(countdown, 1000);
     if (timeLeft == 0) {
       clearTimeout(timerId);
+      timerEl.innerHTML = "Expired"
+      timerEl.classList.add("expired");
       showScore();
     } else {
       timerEl.innerHTML = "🕑 " + timeLeft + ' seconds left';
@@ -144,7 +144,7 @@ function startQuiz() {
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex;
+    let questionNo = currentQuestionIndex + 1;
     questionEl.innerHTML = questionNo + ". " + currentQuestion.question;
     scoreEl.innerHTML = " ";
     nextButton.style.display = "none";
@@ -193,29 +193,48 @@ function selectAnswer(e) {
 nextButton.addEventListener("click", ()=>{
     if(currentQuestionIndex < questions.length){
         handleNextButton();
-        countdown();
     }else{
+        timerEl.innerHTML = " ";
         startQuiz();
     }
 })
 
-function startTimer() {
+function newField() {
+    var input = document.createElement('input');
+    input.className = 'input';
+    input.type = 'input';
+    input.id = 'input';
+    input.value = 'Enter Name Here';
 
+    answerButtons.appendChild(input);
 }
+
 
 function showScore() {
     resetState();
+    newField();
     questionEl.innerHTML = "Final Score:";
-    scoreEl.innerHTML = score -1 + "   out of   " + questionLength;
-    nextButton.innerHTML = "Play Again";
-    nextButton.style.display = "block";
+    scoreEl.innerHTML = score  + "   out of   " + questionLength;
+    nextButton.style.display = "none";
+    saveButton.innerHTML = "Save Score";
+    saveButton.style.display = "block";
+    resultEl.classList.add("hide");
     
+}
+
+function setHighScore() {
+   var enterName = document.getElementById(nameEl).value;
+    localStorage.setItem("highscore", score);
+    localStorage.setItem("name", enterName);
+    console.log(enterName);
 }
 
 function handleNextButton() {
     resetResult();
+    countdown();
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
+     
         showQuestion();
     }else{
         showScore();
