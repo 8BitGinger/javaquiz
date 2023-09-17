@@ -1,3 +1,5 @@
+
+//These are my variables.  The first one Questions is an array of questions and answers.  
 var questions = [
  
 
@@ -115,18 +117,18 @@ var nameEl = document.getElementById("name");
 var submitScoreEl = ("#submit");
 var highscore = 0;
 
-
+//these set up Question Index for dsiplay of the array set up previously.  Sets score at 0
 let currentQuestionIndex = 0;
 let score = 0;
 
 
 
-
+//this function sets up the countdown of timer.  
 function countdown() {
 
     if (timeLeft == 0) {
       clearTimeout(timerId);
-      timerEl.innerHTML = "Time Up!"
+      timerEl.innerHTML = "Time's Up!"
       timerEl.classList.add("expired");
       showScore();
     } else {
@@ -135,15 +137,16 @@ function countdown() {
     }
   }
 
-
+//The function begins the quiz and hides the next button until we want it shown later
 function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
     nextButton.style.display = "none";
     showQuestion();
+    countdown();
 }
-
+//This populates the fields left blank in HTML with our question index set up earlier.  Then wehn
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
@@ -164,7 +167,7 @@ function showQuestion() {
         }
     });
 }
-
+// this function removes the appended child or question that was done previously so we can then add a new one and show next question
 function resetState() {
     nextButton.style.disply = "none";
     while(answerButtons.firstChild) {
@@ -172,6 +175,7 @@ function resetState() {
     }
 }
 
+//this function gives us the ability to mark the selected answer correct or incorrect and then add classes for display purposes like red and green
 function selectAnswer(e) {
     var selectedBtn = e.target;
     var isCorrect = selectedBtn.dataset.correct === "true";
@@ -199,6 +203,7 @@ function selectAnswer(e) {
     nextButton.style.display = "block";
 }
 
+//this allows us to listen for the next button that is only displayed after selecting an answer
 nextButton.addEventListener("click", ()=>{
     if(currentQuestionIndex < questions.length){
         handleNextButton();
@@ -208,6 +213,7 @@ nextButton.addEventListener("click", ()=>{
     }
 })
 
+//this allows us to create the input for initials and commit High Score
 function newField() {
     var input = document.createElement('input');
     input.className = 'input';
@@ -217,15 +223,28 @@ function newField() {
     answerButtons.appendChild(input);
 }
 
+//this function adjusts the time left by 10 seconds for an incorrect answer
 function adjustCount() {
-    var newtime=timeLeft - 10;
-    timerEl.innerHTML = "🕑 " + newtime + ' seconds left';
-      newtime--;
+    timeLeft -= 10;
+
+    if (timeLeft <= 0) {
+        clearTimeout(timerId);
+        timerEl.innerHTML = "Time's Up!"
+        timerEl.classList.add("expired");
+        showScore();
+        } else {
+            timerEl.innerHTML = "🕑 " + timeLeft + ' seconds left';
+            timeLeft--;
+        }
 }
 
+//this function show sthe final score page.  creates an input, resets the question, and clearst the timer. and runs the Set High Score upon button click  
 function showScore() {
     resetState();
     newField();
+    clearTimeout(timerId);
+    timerEl.innerHTML = "Time's Up!";
+    timerEl.classList.add("expired");
     questionEl.innerHTML = "Final Score:";
     scoreEl.innerHTML = score  + "   out of   " + questionLength;
     nextButton.style.display = "none";
@@ -238,15 +257,16 @@ function showScore() {
     })
 }
 
+//this function sets the localStorage value of Name and highscore for use later
 function setHighScore() {
    var enterName = document.getElementById("input").value;
     localStorage.setItem("highscore", score);
     localStorage.setItem("name", enterName);
 }
-
+//this functions tells the next button to run through the array of questions and answers until there are no more to display
 function handleNextButton() {
     resetResult();
-    countdown();
+    
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
      
@@ -256,11 +276,12 @@ function handleNextButton() {
     }
 }
 
+//this function resets the result of correct or incorrect for the next question
 function resetResult() {
     document.getElementById("result").innerHTML = " ";
 }
 
 
-
+//this calls our startQuiz function and begins the Quiz
 startQuiz();
 
