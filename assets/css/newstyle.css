@@ -8,8 +8,9 @@
 
 
 body {
-    background-image: url(/assets/—Pngtree—web\ video\ game\ background_1394789.png);
+    background-image: url(/assets/images/—Pngtree—web\ video\ game\ background_1394789.png);
     background-size: cover;
+    background-position: center;
 }
 
 section {
@@ -39,20 +40,22 @@ div a {
     font-style: italic;
     font-weight:bold;
     border-bottom: 1px solid #ffffff;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 60%;
+    margin-left: 25px;
 }
 .quiz {
     padding: 15px 0;
     margin: 10px;
     margin-top: 30px;
     width: auto;
-    background-image: url(/assets/greenback.png);
+    background-image: url(/assets/images/greenback.png);
   
     background-position: center;
     background-size: cover;
     border-radius: 15px;
-    border: 5px solid white;
+    border: 5px solid rgb(248, 252, 4);
 }
 
 .quiz h2 {
@@ -110,6 +113,7 @@ div a {
 
 .makeBig {
     font-size: 55px;
+    margin-top: -25px;
 }
 
 .glow {
@@ -123,6 +127,8 @@ div a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 35px;
+    margin-top: -10px;
 }
 
 .btn {
@@ -132,7 +138,7 @@ div a {
     font-weight: 800;
     font-family:'Courier New', Courier, monospace;
     width: 45%;
-    border: 5px solid #fbfbfb;
+    border: 5px solid #5ac608;
     padding: 10px;
     margin: 10px 3px;
     text-align: center;
@@ -178,10 +184,11 @@ div a {
 .btn1:hover {
     scale: 1.5;
     box-shadow: 0 0 10px 5px #22a707;
-    background-image: url(/assets/—Pngtree—vector\ reload\ icon_4017523.png);
+    background-image: url(/assets/images/—Pngtree—vector\ reload\ icon_4017523.png);
     background-size: cover;
     font-size: 1px;
     padding: 20px;
+    margin: 20px;
     border: 2px double red;
 }
 
@@ -233,14 +240,18 @@ div a {
     text-align: center;
 }
 
-.result h3 {
-    color: rgb(0, 0, 0);
+h3 {
+    margin: auto;
+    color: rgb(254, 255, 254);
     font-size: xx-large;
-    margin-left: 30px;
+    font-family:Arial, Helvetica, sans-serif;
     border-radius: 10px;
-    width: 35%;
+    width: fit-content;
     text-align: center;
-    background-color: #fffb02;
+    background-color: #a0ba9c;
+    border: 3px solid   green;
+    padding: 5px;
+    justify-content: center;
 }
 
 
@@ -254,7 +265,7 @@ div a {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 500;
     width: 150px;
-    border: 0;
+    border: 3px solid yellow;
     padding:10px;
     margin: 20px auto 0;
     border-radius: 10px;
@@ -293,11 +304,13 @@ div a {
 .btn2:hover {
     scale: 1.5;
     box-shadow: 0 0 10px 5px #22a707;
-    background-image: url(/assets/—Pngtree—lily\ pad\ sticker\ icon\ icon_11085252.png);
+    background-image: url(/assets/images/—Pngtree—lily\ pad\ sticker\ icon\ icon_11085252.png);
     background-size: cover;
     font-size: 1px;
     padding: 20px;
     border: 2px double rgb(13, 248, 13);
+    margin: 20px;
+    margin-top: 30px;
 }
 
 .next-btn1 {
@@ -321,7 +334,7 @@ div a {
     color: #ffffff;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 500;
-    width: 100px;
+    width: 150px;
     border: 0;
     padding:10px;
     margin: 10px auto 0;
@@ -330,7 +343,7 @@ div a {
     justify-content: center;
     font-size:x-large;
     box-shadow: 0 0 10px 1px #07ef26;
-    
+    border: 2px solid yellow;
 }
 
 #startBtn:hover {
@@ -363,11 +376,22 @@ a {
 }
 
 .input {
-    background-color: #07ef26;
-    color: white;
-    text-align: left;
-    padding-left: 5px;;
+    background-color: #8aea97;
+    color: rgb(88, 88, 88);
+    text-align: center;
+    padding-left: 10px;
+    font-size: larger;
+    font-family: monospace;
+    height: 50px;
+    border-radius: 5px;
+    border-color: white;
+    border: 3px dotted white;
+    width: 250px
 }
+
+input:focus::value {
+    color: transparent;
+  }
 
 .incorrect{
     background-color: rgb(233, 108, 108);
@@ -380,3 +404,17 @@ a {
     color: white;
     scale: 1.1;
 }
+
+.woohoo {
+    background-color: green;
+}
+
+.whoops {
+    background-color: #e70c0c;
+}
+
+
+.app1 {
+    margin-top: 15px;
+}
+

@@ -115,15 +115,18 @@ var nameEl = document.getElementById("name");
 var submitScoreEl = ("#submit");
 var highscore = 0;
 
+
 let currentQuestionIndex = 0;
 let score = 0;
+
+
 
 
 function countdown() {
 
     if (timeLeft == 0) {
       clearTimeout(timerId);
-      timerEl.innerHTML = "Expired"
+      timerEl.innerHTML = "Time Up!"
       timerEl.classList.add("expired");
       showScore();
     } else {
@@ -176,10 +179,16 @@ function selectAnswer(e) {
     if(isCorrect){
         selectedBtn.classList.add("correct");
         score += 1;
-        resultEl.innerHTML = "🐸Correct!";
+        resultEl.innerHTML = "Correct!";
+        resultEl.classList.remove("whoops");
+        resultEl.classList.add("woohoo");
+        
     }else{
         selectedBtn.classList.add("incorrect");
-        resultEl.innerHTML = "Incorrect!🐸"
+        resultEl.innerHTML = "Incorrect!"
+        resultEl.classList.remove("woohoo");
+        resultEl.classList.add("whoops");
+        adjustCount();
     }
     Array.from(answerButtons.children).forEach(button => {
         if(button.dataset.correct === "true"){
@@ -204,11 +213,15 @@ function newField() {
     input.className = 'input';
     input.type = 'input';
     input.id = 'input';
-    input.value = 'Enter Name Here';
-
+    input.value = 'Type Initials Here';
     answerButtons.appendChild(input);
 }
 
+function adjustCount() {
+    var newtime=timeLeft - 10;
+    timerEl.innerHTML = "🕑 " + newtime + ' seconds left';
+      newtime--;
+}
 
 function showScore() {
     resetState();
@@ -220,13 +233,15 @@ function showScore() {
     saveButton.style.display = "block";
     resultEl.classList.add("hide");
     
+    saveButton.addEventListener("click", () =>{
+        setHighScore();
+    })
 }
 
 function setHighScore() {
-   var enterName = document.getElementById(nameEl).value;
+   var enterName = document.getElementById("input").value;
     localStorage.setItem("highscore", score);
     localStorage.setItem("name", enterName);
-    console.log(enterName);
 }
 
 function handleNextButton() {
@@ -244,6 +259,8 @@ function handleNextButton() {
 function resetResult() {
     document.getElementById("result").innerHTML = " ";
 }
+
+
 
 startQuiz();
 
