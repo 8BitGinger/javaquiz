@@ -116,6 +116,8 @@ var timerId = setInterval(countdown, 1000);
 var nameEl = document.getElementById("name");
 var submitScoreEl = ("#submit");
 var highscore = 0;
+var highscoreA = [];
+var highscoreSort = highscoreA.toSorted((a, b) => a-b);
 
 //these set up Question Index for dsiplay of the array set up previously.  Sets score at 0
 let currentQuestionIndex = 0;
@@ -225,7 +227,7 @@ function newField() {
 
 //this function adjusts the time left by 10 seconds for an incorrect answer
 function adjustCount() {
-    timeLeft -= 10;
+    timeLeft -= 9;
 
     if (timeLeft <= 0) {
         clearTimeout(timerId);
@@ -251,9 +253,11 @@ function showScore() {
     saveButton.innerHTML = "Save Score";
     saveButton.style.display = "block";
     resultEl.classList.add("hide");
+    checkGreat();    
     
     saveButton.addEventListener("click", () =>{
         setHighScore();
+
     })
 }
 
@@ -273,6 +277,17 @@ function handleNextButton() {
         showQuestion();
     }else{
         showScore();
+    }
+}
+
+//this comes up and says perfect score if player gets all answers correct
+function checkGreat() {
+    if (score >= 10) {
+        resultEl.style.display = "block";
+        resultEl.classList.remove("hide");
+        resultEl.innerHTML = "Perfect Score!";
+    }else{
+        resultEl.classList.add("hide");
     }
 }
 
