@@ -221,7 +221,7 @@ function newField() {
     input.className = 'input';
     input.type = 'input';
     input.id = 'input';
-    input.value = 'Type Initials Here';
+    input.value = 'Enter Initials Here';
     answerButtons.appendChild(input);
 }
 
@@ -255,6 +255,10 @@ function showScore() {
     resultEl.classList.add("hide");
     checkGreat();    
     
+    input.addEventListener("click", () => {
+        input.val = "test";
+    })
+
     saveButton.addEventListener("click", () =>{
         setHighScore();
 
