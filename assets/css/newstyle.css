@@ -1,14 +1,13 @@
 * {
     margin: 0;
     padding:0;
-    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 
 }
 
 
 body {
-    background-image: url(—Pngtree—web\ video\ game\ background_1394789.png);
+    background-image: url(../images/—Pngtree—web\ video\ game\ background_1394789.png);
     background-size: cover;
     background-position: center;
 }
@@ -19,8 +18,8 @@ section {
 
 
 div a {
-    font-family:fantasy;
-
+    
+font-family: 'anton';
 }
 
 .app {
@@ -35,13 +34,13 @@ div a {
 
 
 .app h1 {
-    font-size: 35px;
-    color: #18d507;;
+    font-size: 45px;
+    color: #1ba70f;;
     font-style: italic;
     font-weight:bold;
     border-bottom: 1px solid #ffffff;
     padding-bottom: 10px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'agbalumo';
     width: 60%;
     margin-left: 25px;
 }
@@ -50,21 +49,22 @@ div a {
     margin: 10px;
     margin-top: 30px;
     width: auto;
-    background-image: url(greenback.png);
+    background-image: url(../images/greenback.png);
   
     background-position: center;
     background-size: cover;
     border-radius: 15px;
     border: 5px solid rgb(248, 252, 4);
+    font-family: 'amatic SC';
 }
 
 .quiz h2 {
-    font-size: 25px;
+    font-size: 45px;
     color: #fdfdfd;
     
     text-align: center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-weight:500;
+    font-family: 'amatic SC';
+        font-weight:700;
         padding: 5px;
 }
 
@@ -87,12 +87,14 @@ div a {
     right:10px;
     color: white;
     font-size: 35px;
+    font-family: 'anton';
     padding: 21px;
     padding-top: 19px;
     /*display: none; reomve this comment after finished*/
 }
 
 .highScore {
+    font-family: 'anton';
 
     border-radius: 25px;
     color: white;
@@ -109,6 +111,7 @@ div a {
 .highScore a {
     text-decoration: none;
     color: white;
+    font-family: 'anton';
 }
 
 .makeBig {
@@ -134,9 +137,9 @@ div a {
 .btn {
     background: #fffb02;
     color: #10a348;
-    font-size: larger;
+    font-size: xx-large;
     font-weight: 800;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'amatic SC';
     width: 45%;
     border: 5px solid #5ac608;
     padding: 10px;
@@ -184,7 +187,7 @@ div a {
 .btn1:hover {
     scale: 1.5;
     box-shadow: 0 0 10px 5px #22a707;
-    background-image: url(—Pngtree—vector\ reload\ icon_4017523.png);
+    background-image: url(../images/—Pngtree—vector\ reload\ icon_4017523.png);
     background-size: cover;
     font-size: 1px;
     padding: 20px;
@@ -230,7 +233,7 @@ div a {
     -webkit-text-stroke-color: rgb(7, 7, 7);
 
     margin-top: 30px;
-    font-family:fantasy;
+    font-family: 'anton'
     
 }
 
@@ -304,7 +307,7 @@ h3 {
 .btn2:hover {
     scale: 1.5;
     box-shadow: 0 0 10px 5px #22a707;
-    background-image: url(—Pngtree—lily\ pad\ sticker\ icon\ icon_11085252.png);
+    background-image: url(../images/—Pngtree—lily\ pad\ sticker\ icon\ icon_11085252.png);
     background-size: cover;
     font-size: 1px;
     padding: 20px;
@@ -360,6 +363,7 @@ a {
     flex-wrap: wrap;
     text-align: center;
     text-decoration: none;
+    font-family: 'anton';
 }
 
 .hide {
