@@ -420,3 +420,101 @@ a {
     margin-top: 15px;
 }
 
+@media screen and (max-width: 576px) {
+    .app {
+
+        width: 98%;
+        justify-content: center;
+        margin: 100px auto 0;
+        border-radius: 15px;
+        padding: 30px;
+        margin-top: 100px;
+    }
+    
+    
+    .app h1 {
+        font-size: 30px;
+ 
+        padding-bottom: 5px;
+        
+        width: 70%;
+        
+    }
+    .quiz {
+        padding: 15px 0;
+        margin: 10px;
+        margin-top: 30px;
+        width: auto;
+        background-image: url(../images/greenback.png);
+      
+        background-position: center;
+        background-size: cover;
+        border-radius: 15px;
+        border: 5px solid rgb(248, 252, 4);
+        font-family: 'amatic SC';
+    }
+    
+    .quiz h2 {
+        font-size: 25px;
+        color: #fdfdfd;
+        
+        text-align: center;
+        font-family: 'amatic SC';
+            font-weight:700;
+            padding: 5px;
+    }
+
+    .timer {
+
+      
+        top:9px; 
+        right:10px;
+        color: white;
+        font-size: 15px;
+        font-family: 'anton';
+        padding: 21px;
+        padding-top: 19px;
+        /*display: none; reomve this comment after finished*/
+    }
+    
+    .highScore {
+        font-family: 'anton';
+    
+        border-radius: 25px;
+        color: white;
+        position: absolute;
+        top:0px;
+        left:0px;
+        margin: 5px;
+        margin-top: 30px;
+        margin-left: 15px;
+      
+        font-size: 15px;
+    }
+    
+    .highScore a {
+        text-decoration: none;
+        color: white;
+        font-family: 'anton';
+    }
+
+    .btn {
+        font-size: larger;
+    }
+
+    .tagAlong {
+        font-size: larger;
+    }
+
+    .makeBig {
+        font-size: larger;
+        margin-top: -5px;
+    }
+
+    .home {
+        width: 80%;
+        font-size: large;
+        margin: auto;
+        justify-content: center;
+    }
+}
